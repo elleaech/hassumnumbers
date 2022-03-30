@@ -4,13 +4,9 @@
 
 static int8_t *finishBound_ = NULL;
 
-int main()
+static void
+printResult_(int8_t rc)
 {
-    int8_t listOfNumbers[LIST_SIZE] = {10, 15, 3, 7};
-    int8_t sumResult = 17;
-
-    vsBool rc = hasSumNumbers(listOfNumbers, LIST_SIZE, &sumResult);
-
     switch (rc)
     {
     case TRUE:
@@ -24,6 +20,16 @@ int main()
     default:
         break;
     }
+}
+
+int main()
+{
+    int8_t listOfNumbers[LIST_SIZE] = {10, 15, 3, 7};
+    int8_t sumResult = 17;
+
+    vsBool rc = hasSumNumbers(listOfNumbers, LIST_SIZE, &sumResult);
+
+    printResult_(rc);
 
     return 0;
 }
@@ -88,3 +94,62 @@ hasSumNumbers(const int8_t *listOfNumbers, const int32_t listSize, const int8_t 
 
     return rc;
 }
+
+/*
+class ListOfNumbers{
+    private int finishBound;
+    private List<int> numbers;
+
+    public ListOfNumbers(...){
+        ...;
+    }
+
+    public List getNumbers(...){
+        ...;
+    }
+
+    public int getFinishBound(...){
+        ...;
+    }
+
+    public vsBool hasOnlyOneDigit(...){
+        ...;
+    }
+}
+
+class FindSum {
+    private Stack<ListOfNumbers> listStack;
+
+    public void addList(...){
+        ...;
+    }
+
+    public vsBool hasSumNumbers(){
+        vsBool rc = False;
+
+        if (!listStack.top().hasOnlyOneDigit())
+        {
+            rc = isValidSum_(&listOfNumbers[0], &listOfNumbers[1], sumResult);
+            printResult(rc);
+            popList();
+        }
+
+        return rc;
+    }
+
+    private void popList(...){
+        ...;
+    }
+
+    private void printResult(...){
+        ...;
+    }
+
+    private vsBool isValidSum_(...){
+        ...;
+    }
+    private vsBool findedSolution_(...){
+        ...;
+    }
+}
+*/
