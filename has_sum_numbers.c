@@ -84,6 +84,7 @@ hasSumNumbers(const int8_t *listOfNumbers, const int32_t listSize, const int8_t 
         finishBound_ = (int8_t *)listOfNumbers + (int32_t)listSize - 1;
         // printf("finishBound_ %d\n", *finishBound_);
 
+        // If list is not empty
         if (finishBound_ != &listOfNumbers[0])
         {
             rc = isValidSum_(&listOfNumbers[0], &listOfNumbers[1], sumResult);
